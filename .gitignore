@@ -1,45 +1,16 @@
 //Noi day mn se code theo phan minh chia nha.
 //======================================================================================
+#include <iostream>
+using namespace std;
+// IN THU VIEN
+#include <vector>
+#include <windows.h>
+#include <conio.h>
+#include <cstring>
+#include <time.h>
+#include <random>
+#define WIDTH 40
+#define HEIGHT 20
+#define BODY '*'
+#define APPLE 'O'
 
-//Tao hinh ran + di chuyen
-
-
-
-
-
-
-
-
-//Tao tuong, khu vuc choi
-
-
-
-
-
-
-
-
-//Them phan hop li cho game
-
-
-
-
-
-
-//Toi uu game
-
-
-
-
-
-
-
-//Chuc nang san moi
-
-
-
-
-
-
-
-//main
