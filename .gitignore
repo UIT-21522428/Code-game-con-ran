@@ -39,3 +39,20 @@ vector<Point> snake = {
 	Point{ WIDTH / 2 + 2, HEIGHT / 2 },
 	Point{ WIDTH / 2 + 1, HEIGHT / 2 },
 	Point{ WIDTH / 2, HEIGHT / 2 },	
+Point{ WIDTH / 2 - 1, HEIGHT / 2 },
+	Point{ WIDTH / 2 - 2, HEIGHT / 2 }
+};
+Direction direction = Direction::right;
+Point apple;
+int score = 0;
+int speed = 300;
+Point prevTail;
+#pragma endregion
+
+
+#pragma region Prototype
+void drawSnakePart(Point);
+void drawSnake();
+void gotoxy(int, int);
+void ShowConsoleCursor(bool);
+void move();
