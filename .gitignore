@@ -56,3 +56,38 @@ void drawSnake();
 void gotoxy(int, int);
 void ShowConsoleCursor(bool);
 void move();
+
+/* 
+  *Bắt đầu game
+*/
+
+int main ()
+{
+  showStartmMnu();
+  return 0;
+}
+
+#pragma region GameFunction
+// Thiết lập khung bảo vệ bên ngoài
+
+void drawBox()
+{
+  for (size_t i=0, i < WIDTH; i++)
+  	cout << " = ";
+  	gotoxy(0, HEIGHT);
+  for (size_t i=0, i < WIDTH; i++)
+  	cout << " = ";
+  for (size_t i=0; i < HEIGHT; i++)
+  {
+  	gotoxy(0, i);
+	cout << "|";
+  }
+  for (size_t i=0; i < HEIGHT; i++)
+  {
+  	gotoxy(WIDTH, i);
+	cout << "|";
+  }
+}
+  	
+  
+
