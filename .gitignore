@@ -88,6 +88,19 @@ void drawBox()
 	cout << "|";
   }
 }
-  	
-  
+
+
+#pragma region ConsoleFuction
+// Di chuyển đúng vị trí
+
+void gotoxy(int x, int y)
+{
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(
+		GetStdHandle(STD_OUTPUT_HANDLE),
+		coord
+	);
+}
 
