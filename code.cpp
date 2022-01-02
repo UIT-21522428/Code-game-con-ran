@@ -1,32 +1,41 @@
 //truong hop quay dau nguoc lai
-if (ch == 'a' && direction != Direction::right)
-	direction = Direction::left;
-else if (ch == 'w' && direction != Direction::down)
-	direction = Direction::up;
-else if (ch == 's' && direction != Direction::up)
-	direction = Direction::down;
-else if (ch == 'd' && direction != Direction::left)
-	direction = Direction::right;
-else if (ch == 'q') // Thoat game
-	break;
+			if (ch == 'a' && huong != HUONG::phai)
+				huong = HUONG::trai;
+			else if (ch == 'w' && huong != HUONG::xuong)
+				huong = HUONG::len;
+			else if (ch == 's' && huong != HUONG::len)
+				huong = HUONG::xuong;
+			else if (ch == 'd' && huong != HUONG::trai)
+				huong = HUONG::phai;
+			else if (ch == 'q')
+			{
+				
+				break;
+			}
+		}
 //dung tuong
-bool isHitWall()
+bool dung_tuong()
 {
-	return snake[0].x == 0 || snake[0].y == 0 || snake[0].x == WIDTH || snake[0].y == HEIGHT;
+	return snake[0].x == 0 || snake[0].y == 0 || snake[0].x == C_RONG || snake[0].y == C_CAO;
 }
 //can ban than
-bool isBiteItself()
+bool can_ban_than()
 {
-	Point head = snake[0];
+	phan_than head = snake[0];
 	for (size_t i = 1; i < snake.size(); i++)
 		if (head.x == snake[i].x && head.y == snake[i].y)
 			return true;
 	return false;
 }
+
 //them lai
 move();
-if (isBiteItself())
-	break;
-if (isHitWall())
-	break;
-drawSnake();
+		
+		if (can_ban_than())
+		{
+			break;
+		}
+		if (dung_tuong())
+		{
+			break;
+		}
