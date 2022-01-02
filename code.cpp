@@ -5,30 +5,28 @@
 
 //code o duoi 
 
-struct Point
+struct phan_than
 {
 	int x;
 	int y;
 };
-
-vector<Point> snake = {
-	Point{ WIDTH / 2 + 2, HEIGHT / 2 },
-	Point{ WIDTH / 2 + 1, HEIGHT / 2 },
-	Point{ WIDTH / 2, HEIGHT / 2 },
-	Point{ WIDTH / 2 - 1, HEIGHT / 2 },
-	Point{ WIDTH / 2 - 2, HEIGHT / 2 }
+vector<phan_than> snake = {
+	phan_than{ C_RONG / 2 + 2, C_CAO / 2 },
+	phan_than{ C_RONG / 2 + 1, C_CAO / 2 },
+	phan_than{ C_RONG / 2, C_CAO / 2 },
+	phan_than{ C_RONG / 2 - 1, C_CAO / 2 },
+	phan_than{ C_RONG / 2 - 2, C_CAO / 2 }
 };
 
 
-void drawSnakePart(Point p)
+void ve_snake_phan(phan_than p)
 {
 	gotoxy(p.x, p.y);
-	// BODY là ký tự đại diện cho phần thân của con rắn
-	cout << BODY;
+	cout << THAN;
 }
-
-void drawSnake()
+void ve_Snake()
 {
 	for (size_t i = 0; i < snake.size(); i++)
-		drawSnakePart(snake[i]);
+		ve_snake_phan(snake[i]);
 }
+
