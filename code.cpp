@@ -1,18 +1,17 @@
-Point prevTail;
-
-void move()
-{
-	// lưu phần đuôi cũ lại
-	prevTail = snake.back();
-	// code gores here
-}
-
-void drawHeadnTail()
+void ve_dau_duoi()
 {
 	gotoxy(snake[0].x, snake[0].y);
-	cout << BODY;
- // vẽ phần đầu mới
-	Point tail = snake.back();
-	gotoxy(prevTail.x, prevTail.y);
-	cout << ' '; // xóa phần đuôi cũ đi
+	cout << THAN;
+	gotoxy(duoi_truoc.x, duoi_truoc.y);
+	cout << ' '; // Clear the old tail
 }
+
+bool can_ban_than()
+{
+	phan_than head = snake[0];
+	for (size_t i = 1; i < snake.size(); i++)
+		if (head.x == snake[i].x && head.y == snake[i].y)
+			return true;
+	return false;
+}
+
