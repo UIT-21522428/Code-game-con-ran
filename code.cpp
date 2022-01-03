@@ -12,6 +12,7 @@ void tao_do_an()
 	cout << DO_AN;
 }
 
+//kiểm tra rắn có ăn không?
 bool an_do_an()
 {
 	return snake[0].x == do_an.x && snake[0].y == do_an.y;
