@@ -1,3 +1,15 @@
+#include <iostream>
+using namespace std;
+#include <vector>
+#include <windows.h>
+#include <conio.h>
+#include <cstring>
+#include <time.h>
+#include <random>
+#define C_RONG 40
+#define C_CAO 20
+#define THAN '*'
+#define DO_AN 'O'
 //tạo quả táo 
 void tao_do_an()
 {
