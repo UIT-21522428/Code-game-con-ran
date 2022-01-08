@@ -4,7 +4,13 @@
 
 
 //code o duoi 
-
+enum class HUONG
+{
+	len,
+	phai,
+	xuong,
+	trai
+};
 struct phan_than
 {
 	int x;
