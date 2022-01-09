@@ -19,8 +19,4 @@ void ve_tuong()
 		cout << '#';
 	}
 }
-bool dung_tuong()
-{
-	return snake[0].x == 0 || snake[0].y == 0 || snake[0].x == C_RONG || snake[0].y == C_CAO;
-}
 
