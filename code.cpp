@@ -5,3 +5,7 @@ void ve_dau_duoi()
 	gotoxy(duoi_truoc.x, duoi_truoc.y);
 	cout << ' '; // Clear the old tail
 }
+void map_ra()
+{
+    snake.push_back(duoi_truoc);
+}
