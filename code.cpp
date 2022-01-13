@@ -182,7 +182,7 @@ bool dung_tuong_crush() //logic khi ran dung tuong o map 2
 	|| (snake[0].x == 13 && 4 <= snake[0].y && snake[0].y <= 7)
 	|| (snake[0].x == 14 && 5 <= snake[0].y && snake[0].y <= 6)
 	|| (snake[0].x == 18 && 4 <= snake[0].y && snake[0].y <= 7)
-	|| (snake[0].x == 22 || 4 <= snake[0].y && snake[0].y <= 7)
+	|| (snake[0].x == 22 && 4 <= snake[0].y && snake[0].y <= 7)
 	|| (snake[0].y == 8 && 18 <= snake[0].x && snake[0].x <= 22)
 	;
 }
