@@ -31,6 +31,34 @@ vector<phan_than> snake = {
 	phan_than{ C_RONG / 2 - 1, C_CAO / 2 },
 	phan_than{ C_RONG / 2 - 2, C_CAO / 2 }
 };
+UONG huong = HUONG::phai;
+phan_than do_an;
+int diem = 0;
+int toc_do = 300;
+phan_than duoi_truoc;
+
+void ve_snake_phan(phan_than);
+void ve_Snake();
+void gotoxy(int, int);
+void ShowConsoleCursor(bool);
+void move();
+void ve_tuong();
+void ve_tuong_crush();
+bool dung_tuong();
+bool dung_tuong_crush();
+bool can_ban_than();
+void ve_dau_duoi();
+void tao_do_an();
+void tao_do_an_crush();
+bool an_do_an();
+void map_ra();
+void hien_diem();
+void menu_ket_thuc();
+void menu_ket_thuc_crush();
+void bat_dau_game();
+void bat_dau_game_crush();
+void khoi_tao_lai_snake();
+void menu_bat_dau();
 void ve_tuong()
 {
 	for (size_t i = 0; i < C_RONG; i++)
