@@ -186,6 +186,38 @@ bool dung_tuong_crush() //logic khi ran dung tuong o map 2
 	|| (snake[0].y == 8 && 18 <= snake[0].x && snake[0].x <= 22)
 	;
 }
+//tao do an
+void tao_do_an()
+{
+		srand(time(NULL));
+		int x = rand() % (C_RONG - 1) + 1;
+		int y = rand() % (C_CAO - 1) + 1;
+	do_an = {
+		x,
+		y,
+	};
+	gotoxy(x, y);
+	cout << DO_AN;
+
+}
+void tao_do_an_crush()
+{
+	srand(time(0));
+	int x = rand() % (C_RONG-1) + 1; //40  //(max - min ) +1
+	int y = rand() % (9) + (9);   //max20
+	do_an = {
+		x,
+		y,
+	};
+	gotoxy(x, y);
+	cout << DO_AN;
+}
+//kiem tra ran an qua
+bool an_do_an()
+{
+	return snake[0].x == do_an.x && snake[0].y == do_an.y;
+}
+
 
 //code o duoi 
 //dichuyen
