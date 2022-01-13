@@ -368,7 +368,116 @@ void bat_dau_game_crush()
 		Sleep(toc_do);
 	}
 }
-//
+//khoi tao lai snake
+
+void khoi_tao_lai_snake()
+{
+    diem = 0;
+    huong = HUONG::phai;
+    snake = {
+        phan_than{ C_RONG / 2 + 2, C_CAO / 2 },
+        phan_than{ C_RONG / 2 + 1, C_CAO / 2 },
+        phan_than{ C_RONG / 2, C_CAO / 2 },
+        phan_than{ C_RONG / 2 - 1, C_CAO / 2 },
+        phan_than{ C_RONG / 2 - 2, C_CAO / 2 }
+    };
+}
+
+// Menu Bat dau
+
+void menu_bat_dau()
+{
+	system("cls");
+	cout << "Chao mung toi game ran san moi (*^v^*)" << endl;
+	cout << "Cac lua chon: " << endl;
+	cout << "1. Bat dau" << endl;
+	cout << "2. Thoat" << endl;
+	cout << "Ban chon gi naooo: ";
+	int lua_chon;
+	cin >> lua_chon;
+	while (lua_chon>2||lua_chon<1)
+        {
+            cout<<"Ban nhap sai uii, nhap lai nha OwO";
+            cout << "\nCac lua chon: " << endl;
+            cout << "\n1. Bat dau" << endl;
+            cout << "\n2. Thoat" << endl;
+            cout << "\nBan chon gi naooo: ";
+            cin >> lua_chon;
+        }
+	if (lua_chon == 1)
+	{   system("cls");
+	    cout<<"Chon ban do nao ban oi ^^: \n1. Map co dien \n2. Map yeu doi <3\nNhap so vo day nha: ";
+		cout <<"\nBan chon map nao neee:  ";
+		int mapping;
+        cin >> mapping;
+		if (mapping == 1)
+        {
+		system("cls");
+		cout<<"Cac level toc do hien co: 1- Em be; 2- Hoc sinh; 3- Chay bo; 4- May bay; 5- Tau vu tru";
+		cout << "\nChon level cho con ran(1 - 5): ";
+		int t;
+		cin >> t;
+        while (t>5||t<1)
+        {
+            cout<<"Ban nhap sai uii, nhap lai nha OwO";
+            cout <<"\nChon level cho con rang(1 - 5): ";
+            cin >> t;
+        }
+		toc_do = 600 - t * 100;
+		system("cls");
+
+		cout << "Mach nho ne, khi choi bam \"q\" de thoat game nhaaa";
+		gotoxy(0, 3);
+		cout << "Bat dau!";
+		Sleep(1000);
+		for (size_t i = 3; i > 0; i--)
+		{
+			gotoxy(0, 3);
+			cout << i << "         ";
+			Sleep(1000);
+		}
+		gotoxy(0, 3);
+		cout << "San moi thuiiii!";
+		Sleep(1000);
+		bat_dau_game();
+        }
+        if (mapping == 2)
+        {
+		system("cls");
+		cout<<"Cac level toc do hien co: 1- Em be; 2- Hoc sinh; 3- Chay bo; 4- May bay; 5- Tau vu tru";
+		cout << "\nChon level cho con ran(1 - 5): ";
+		int t;
+		cin >> t;
+        while (t>5||t<1)
+        {
+            cout<<"Ban nhap sai uii, nhap lai nha OwO";
+            cout <<"\nChon level cho con rang(1 - 5): ";
+            cin >> t;
+        }
+		toc_do = 600 - t * 100; // tinh toc do
+		system("cls");
+
+		cout << "Mach nho ne, khi choi bam \"q\" de thoat game nhaaa";
+		gotoxy(0, 3);
+		cout << "Bat dau!";
+		Sleep(1000);
+		for (size_t i = 3; i > 0; i--)
+		{
+			gotoxy(0, 3);
+			cout << i << "         ";
+			Sleep(1000);
+		}
+		gotoxy(0, 3);
+		cout << "San moi thuiiii!";
+		Sleep(1000);
+		bat_dau_game_crush();
+        }
+        }
+	else if (lua_chon == 2)
+		exit(1);
+}
+
+
 void ve_snake_phan(phan_than p)
 {
 	gotoxy(p.x, p.y);
