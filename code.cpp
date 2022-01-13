@@ -18,7 +18,7 @@ void tao_do_an_crush()
 {
 	srand(time(0));
 	int x = rand() % (C_RONG -1) + 1; 
-	int y = rand() % (5) + (13);  
+	int y = rand() % (9) + (9);  
 	do_an = {
 		x,
 		y,
@@ -32,4 +32,9 @@ void tao_do_an_crush()
 bool an_do_an()
 {
 	return snake[0].x == do_an.x && snake[0].y == do_an.y;
+}
+//rắn dài ra khi ăn 
+void map_ra()
+{
+	snake.push_back(duoi_truoc);
 }
