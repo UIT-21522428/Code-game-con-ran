@@ -217,7 +217,47 @@ bool an_do_an()
 {
 	return snake[0].x == do_an.x && snake[0].y == do_an.y;
 }
-
+void hien_diem()
+{
+    gotoxy(C_RONG + 5, 2);
+    cout << "Diem cua ban: " << diem;
+}
+void menu_ket_thuc()
+{
+    system("cls");
+    gotoxy(0, 0);
+    cout << "Tro choi ket thuc" << endl;
+    cout << "Diem cua ban " << diem << endl;
+    cout << "Muon choi lai khong ne?([c]/[k]): ";
+    char lua_chon;
+    cin >> lua_chon;
+    lua_chon = tolower(lua_chon);
+    if (lua_chon == 'c')
+    {
+        khoi_tao_lai_snake();
+        bat_dau_game();
+    }
+    else if (lua_chon == 'k')
+        exit(1);
+}
+void menu_ket_thuc_crush()
+{
+    system("cls");
+    gotoxy(0, 0);
+    cout << "Tro choi ket thuc" << endl;
+    cout << "Diem cua ban " << diem << endl;
+    cout << "Muon choi lai khong ne?([c]/[k]): ";
+    char lua_chon;
+    cin >> lua_chon;
+    lua_chon = tolower(lua_chon);
+    if (lua_chon == 'c')
+    {
+        khoi_tao_lai_snake();
+        bat_dau_game_crush();
+    }
+    else if (lua_chon == 'k')
+        exit(1);
+}
 
 //code o duoi 
 //dichuyen
