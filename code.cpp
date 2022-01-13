@@ -189,7 +189,7 @@ bool dung_tuong_crush() //logic khi ran dung tuong o map 2
 //tao do an
 void tao_do_an()
 {
-		srand(time(NULL));
+		srand(time(0));
 		int x = rand() % (C_RONG - 1) + 1;
 		int y = rand() % (C_CAO - 1) + 1;
 	do_an = {
@@ -505,39 +505,17 @@ void move()
 	else if (huong == HUONG::phai)
 		snake[0].x += 1;
 }
-//phien ban crush
-
-//phien ban thuong
 
 
 
-void move()
-{
-	duoi_truoc = snake.back();
-}
 void ve_dau_duoi()
 {
 	gotoxy(snake[0].x, snake[0].y);
 	cout << THAN;
 	gotoxy(duoi_truoc.x, duoi_truoc.y);
-	cout << ' '; // Clear the old tail
-=======
+	cout << ' '; // Xoa duoi
 
-//truong hop quay dau nguoc lai
-			if (ch == 'a' && huong != HUONG::phai)
-				huong = HUONG::trai;
-			else if (ch == 'w' && huong != HUONG::xuong)
-				huong = HUONG::len;
-			else if (ch == 's' && huong != HUONG::len)
-				huong = HUONG::xuong;
-			else if (ch == 'd' && huong != HUONG::trai)
-				huong = HUONG::phai;
-			else if (ch == 'q')
-			{
-				
-				break;
-			}
-		}
+
 
 //can ban than
 bool can_ban_than()
@@ -547,42 +525,8 @@ bool can_ban_than()
 		if (head.x == snake[i].x && head.y == snake[i].y)
 			return true;
 	return false;
-=======
-
-//tạo quả táo 
-//bản đồ thường
-void tao_do_an()
-{
-	srand(time(0));// hàm random
-	int x = rand() % (C_RONG - 1) + 1;
-	int y = rand() % (C_CAO - 1) + 1;
-	do_an = {
-		x,
-		y,
-	};
-	gotoxy(x, y);
-	cout << DO_AN;
-}
-//bản đồ crush 
-void tao_do_an_crush()
-{
-	srand(time(0));
-	int x = rand() % (C_RONG -1) + 1; 
-	int y = rand() % (9) + (9);  
-	do_an = {
-		x,
-		y,
-	};
-	gotoxy(x, y);
-	cout << DO_AN;
 }
 
-
-//kiểm tra rắn có ăn không?
-bool an_do_an()
-{
-	return snake[0].x == do_an.x && snake[0].y == do_an.y;
-}
 //rắn dài ra khi ăn 
 void map_ra()
 {
