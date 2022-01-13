@@ -1,7 +1,36 @@
-// Tao tuong
-
-
-
+#include <iostream>
+using namespace std;
+#include <vector>
+#include <windows.h>
+#include <conio.h>
+#include <cstring>
+#include <time.h>
+#include <random>
+#define C_RONG 40
+#define C_CAO 20
+#define THAN '='
+#define DO_AN '0'
+//Huong va di chuyen
+enum class HUONG
+{
+	len,
+	phai,
+	xuong,
+	trai
+};
+//ve ran
+struct phan_than
+{
+	int x;
+	int y;
+};
+vector<phan_than> snake = {
+	phan_than{ C_RONG / 2 + 2, C_CAO / 2 },
+	phan_than{ C_RONG / 2 + 1, C_CAO / 2 },
+	phan_than{ C_RONG / 2, C_CAO / 2 },
+	phan_than{ C_RONG / 2 - 1, C_CAO / 2 },
+	phan_than{ C_RONG / 2 - 2, C_CAO / 2 }
+};
 void ve_tuong()
 {
 	for (size_t i = 0; i < C_RONG; i++)
@@ -24,26 +53,7 @@ void ve_tuong()
 
 //code o duoi 
 //dichuyen
-enum class HUONG
-{
-	len,
-	phai,
-	xuong,
-	trai
-};
-//ve ran
-struct phan_than
-{
-	int x;
-	int y;
-};
-vector<phan_than> snake = {
-	phan_than{ C_RONG / 2 + 2, C_CAO / 2 },
-	phan_than{ C_RONG / 2 + 1, C_CAO / 2 },
-	phan_than{ C_RONG / 2, C_CAO / 2 },
-	phan_than{ C_RONG / 2 - 1, C_CAO / 2 },
-	phan_than{ C_RONG / 2 - 2, C_CAO / 2 }
-};
+
 void ve_snake_phan(phan_than p)
 {
 	gotoxy(p.x, p.y);
