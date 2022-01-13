@@ -19,8 +19,12 @@ void tao_do_an_crush()
 	srand(time(0));
 	int x = rand() % (C_RONG -1) + 1; 
 	int y = rand() % (5) + (13);  
-
-	
+	do_an = {
+		x,
+		y,
+	};
+	gotoxy(x, y);
+	cout << DO_AN;
 }
 
 
