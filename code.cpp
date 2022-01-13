@@ -222,6 +222,7 @@ void hien_diem()
     gotoxy(C_RONG + 5, 2);
     cout << "Diem cua ban: " << diem;
 }
+//menu ket thuc
 void menu_ket_thuc()
 {
     system("cls");
@@ -258,10 +259,116 @@ void menu_ket_thuc_crush()
     else if (lua_chon == 'k')
         exit(1);
 }
+//bat dau game
+void bat_dau_game()
+{
+	system("cls");
+	ShowConsoleCursor(false);
 
-//code o duoi 
-//dichuyen
+	ve_tuong();
+	ve_Snake();
+	tao_do_an();
+	hien_diem();
 
+	while (true)
+	{
+		if (_kbhit())
+		{
+			char ch = _getch();
+			ch = tolower(ch);
+			if (ch == 'a' && huong != HUONG::phai)
+				huong = HUONG::trai;
+			else if (ch == 'w' && huong != HUONG::xuong)
+				huong = HUONG::len;
+			else if (ch == 's' && huong != HUONG::len)
+				huong = HUONG::xuong;
+			else if (ch == 'd' && huong != HUONG::trai)
+				huong = HUONG::phai;
+			else if (ch == 'q')
+			{
+				menu_ket_thuc();
+				break;
+			}
+		}
+		move();
+		ve_dau_duoi();
+		if (an_do_an())
+		{
+			diem++;
+			hien_diem();
+			map_ra();
+			tao_do_an();
+		}
+		if (can_ban_than())
+		{
+			ShowConsoleCursor(true);
+			menu_ket_thuc();
+			break;
+		}
+		if (dung_tuong())
+		{
+			ShowConsoleCursor(true);
+			menu_ket_thuc();
+			break;
+		}
+		Sleep(toc_do);
+	}
+}
+//batdaugamemap2
+void bat_dau_game_crush()
+{
+	system("cls");
+	ShowConsoleCursor(false);
+
+	ve_tuong_crush();
+	ve_Snake();
+	tao_do_an_crush();
+	hien_diem();
+	while (true)
+	{
+		if (_kbhit())
+		{
+			char ch = _getch();
+			ch = tolower(ch);
+			if (ch == 'a' && huong != HUONG::phai)
+				huong = HUONG::trai;
+			else if (ch == 'w' && huong != HUONG::xuong)
+				huong = HUONG::len;
+			else if (ch == 's' && huong != HUONG::len)
+				huong = HUONG::xuong;
+			else if (ch == 'd' && huong != HUONG::trai)
+				huong = HUONG::phai;
+			else if (ch == 'q')
+			{
+				menu_ket_thuc_crush();
+				break;
+			}
+		}
+		move();
+		ve_dau_duoi();
+		if (an_do_an())
+		{
+			diem++;
+			hien_diem();
+			map_ra();
+			tao_do_an_crush();
+		}
+		if (can_ban_than())
+		{
+			ShowConsoleCursor(true);
+			menu_ket_thuc();
+			break;
+		}
+		if (dung_tuong_crush())
+		{
+			ShowConsoleCursor(true);
+			menu_ket_thuc_crush();
+			break;
+		}
+		Sleep(toc_do);
+	}
+}
+//
 void ve_snake_phan(phan_than p)
 {
 	gotoxy(p.x, p.y);
@@ -290,51 +397,9 @@ void move()
 		snake[0].x += 1;
 }
 //phien ban crush
-while (true)
-	{
-		if (_kbhit())
-		{
-			char ch = _getch();
-			ch = tolower(ch);
-			if (ch == 'a' && huong != HUONG::phai)
-				huong = HUONG::trai;
-			else if (ch == 'w' && huong != HUONG::xuong)
-				huong = HUONG::len;
-			else if (ch == 's' && huong != HUONG::len)
-				huong = HUONG::xuong;
-			else if (ch == 'd' && huong != HUONG::trai)
-				huong = HUONG::phai;
-			else if (ch == 'q')
-			{
-				menu_ket_thuc_crush();
-				break;
-			}
-		}
-		move();
-		ve_dau_duoi();
+
 //phien ban thuong
-while (true)
-	{
-		if (_kbhit())
-		{
-			char ch = _getch();
-			ch = tolower(ch);
-			if (ch == 'a' && huong != HUONG::phai)
-				huong = HUONG::trai;
-			else if (ch == 'w' && huong != HUONG::xuong)
-				huong = HUONG::len;
-			else if (ch == 's' && huong != HUONG::len)
-				huong = HUONG::xuong;
-			else if (ch == 'd' && huong != HUONG::trai)
-				huong = HUONG::phai;
-			else if (ch == 'q')
-			{
-				menu_ket_thuc();
-				break;
-			}
-		}
-		move();
-		ve_dau_duoi();
+
 
 
 void move()
