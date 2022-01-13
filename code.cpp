@@ -514,8 +514,7 @@ void ve_dau_duoi()
 	cout << THAN;
 	gotoxy(duoi_truoc.x, duoi_truoc.y);
 	cout << ' '; // Xoa duoi
-
-
+}
 
 //can ban than
 bool can_ban_than()
