@@ -1,3 +1,4 @@
+//Khai bao thu vien
 #include <iostream>
 using namespace std;
 #include <vector>
@@ -65,7 +66,7 @@ int main()
     menu_bat_dau();
     return 0;
 } 
-
+//tuong
 void ve_tuong()
 {
 	for (size_t i = 0; i < C_RONG; i++)
@@ -85,7 +86,7 @@ void ve_tuong()
 	}
 }
 
-//tường map 2
+//tuong map 2
 void ve_tuong_crush()
 {   //ngang
     for (size_t i = 0; i < C_RONG; i++)
@@ -162,8 +163,29 @@ void ve_tuong_crush()
     for (size_t i = 10; i < 14; i++)
 		cout << '#';
 	gotoxy(4, C_CAO);
-
-
+}
+//dung tuong
+bool dung_tuong()
+{
+	return snake[0].x == 0 || snake[0].y == 0 || snake[0].x == C_RONG || snake[0].y == C_CAO;
+}
+bool dung_tuong_crush() //logic khi ran dung tuong o map 2
+{
+	return snake[0].x == 0 || snake[0].y == 0
+	|| snake[0].x == C_RONG || snake[0].y == C_CAO
+	|| (snake[0].x == 2 && 4 <= snake[0].y && snake[0].y <= 8)
+	|| (snake[0].x == 8 && 5 <= snake[0].y && snake[0].y <= 6)
+	|| (snake[0].x == 9 && 4 <= snake[0].y && snake[0].y <= 7)
+	|| (snake[0].x == 10 && 5 <= snake[0].y && snake[0].y <= 8)
+	|| (snake[0].x == 11 && 6 <= snake[0].y && snake[0].y <= 8)
+	|| (snake[0].x == 12 && 5 <= snake[0].y && snake[0].y <= 8)
+	|| (snake[0].x == 13 && 4 <= snake[0].y && snake[0].y <= 7)
+	|| (snake[0].x == 14 && 5 <= snake[0].y && snake[0].y <= 6)
+	|| (snake[0].x == 18 && 4 <= snake[0].y && snake[0].y <= 7)
+	|| (snake[0].x == 22 || 4 <= snake[0].y && snake[0].y <= 7)
+	|| (snake[0].y == 8 && 18 <= snake[0].x && snake[0].x <= 22)
+	;
+}
 
 //code o duoi 
 //dichuyen
@@ -241,7 +263,6 @@ while (true)
 		}
 		move();
 		ve_dau_duoi();
-=======
 
 
 void move()
@@ -271,28 +292,7 @@ void ve_dau_duoi()
 				break;
 			}
 		}
-//dung tuong
-bool dung_tuong()
-{
-	return snake[0].x == 0 || snake[0].y == 0 || snake[0].x == C_RONG || snake[0].y == C_CAO;
-}
-bool dung_tuong_crush() //logic khi ran dung tuong o map 2
-{
-	return snake[0].x == 0 || snake[0].y == 0
-	|| snake[0].x == C_RONG || snake[0].y == C_CAO
-	|| (snake[0].x == 2 && 4 <= snake[0].y && snake[0].y <= 8)
-	|| (snake[0].x == 8 && 5 <= snake[0].y && snake[0].y <= 6)
-	|| (snake[0].x == 9 && 4 <= snake[0].y && snake[0].y <= 7)
-	|| (snake[0].x == 10 && 5 <= snake[0].y && snake[0].y <= 8)
-	|| (snake[0].x == 11 && 6 <= snake[0].y && snake[0].y <= 8)
-	|| (snake[0].x == 12 && 5 <= snake[0].y && snake[0].y <= 8)
-	|| (snake[0].x == 13 && 4 <= snake[0].y && snake[0].y <= 7)
-	|| (snake[0].x == 14 && 5 <= snake[0].y && snake[0].y <= 6)
-	|| (snake[0].x == 18 && 4 <= snake[0].y && snake[0].y <= 7)
-	|| (snake[0].x == 22 || 4 <= snake[0].y && snake[0].y <= 7)
-	|| (snake[0].y == 8 && 18 <= snake[0].x && snake[0].x <= 22)
-	;
-}
+
 //can ban than
 bool can_ban_than()
 {
